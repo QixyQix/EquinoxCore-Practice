@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Core.Models
 {
-    class Entity
+    public abstract class Entity
     {
         public Guid Id { get; protected set; }
 
