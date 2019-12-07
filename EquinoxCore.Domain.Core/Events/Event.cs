@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EquinoxCore.Domain.Core.Event
+namespace EquinoxCore.Domain.Core.Events
 {
     public abstract class Event : Message, INotification
     {

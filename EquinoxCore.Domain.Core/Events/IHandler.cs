@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EquinoxCore.Domain.Core.Event
+namespace EquinoxCore.Domain.Core.Events
 {
     public interface IHandler<T> where T : Message
     {

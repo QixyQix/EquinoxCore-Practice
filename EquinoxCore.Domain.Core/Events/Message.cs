@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MediatR;
 
-namespace EquinoxCore.Domain.Core.Event
+namespace EquinoxCore.Domain.Core.Events
 {
     public abstract class Message : IRequest<bool>
     {

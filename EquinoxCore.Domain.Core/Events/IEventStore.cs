@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EquinoxCore.Domain.Core.Event
+namespace EquinoxCore.Domain.Core.Events
 {
     interface IEventStore
     {
