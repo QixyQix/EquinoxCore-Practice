@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 namespace EquinoxCore.Domain.Interfaces
 {
-    interface IUser
+    public interface IUser
     {
         string Name { get; }
         bool IsAuthenticated();

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Interfaces
 {
-    interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         bool Commit();
     }

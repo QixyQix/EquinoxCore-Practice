@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace EquinoxCore.Domain.Interfaces
 {
-    interface IRepository<TEntity> : IDisposable where TEntity : class
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(Guid id);

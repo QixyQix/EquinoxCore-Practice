@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Interfaces
 {
-    interface ICustomerRepository : IRepository<Customer>
+    public interface ICustomerRepository : IRepository<Customer>
     {
         Customer GetByEmail(string email);
     }
