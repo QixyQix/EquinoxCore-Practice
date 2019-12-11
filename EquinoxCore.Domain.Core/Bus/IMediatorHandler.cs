@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EquinoxCore.Domain.Core.Bus
 {
-    interface IMediatorHandler
+    public interface IMediatorHandler
     {
         Task SendCommand<T>(T command) where T : Command;
         Task RaiseEvent<T>(T @event) where T : Event;
