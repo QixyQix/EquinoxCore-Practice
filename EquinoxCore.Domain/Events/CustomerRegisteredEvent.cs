@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Events
 {
-    class CustomerRegisteredEvent : Event
+    public class CustomerRegisteredEvent : Event
     {
         public Guid Id { get; set; }
         public string Name { get; private set; }
