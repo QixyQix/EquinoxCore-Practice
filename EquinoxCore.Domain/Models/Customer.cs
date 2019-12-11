@@ -4,7 +4,7 @@ using EquinoxCore.Domain.Core.Models;
 namespace EquinoxCore.Domain.Models
 {
 
-    class Customer : Entity
+    public class Customer : Entity
     {
         public string Name { get; private set; }
         public string Email { get; private set; }
