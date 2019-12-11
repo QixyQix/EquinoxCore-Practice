@@ -9,7 +9,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.CommandHandlers
 {
-    class CommandHandler
+    public class CommandHandler
     {
         private readonly IUnitOfWork _uow;
         private readonly IMediatorHandler _bus;
