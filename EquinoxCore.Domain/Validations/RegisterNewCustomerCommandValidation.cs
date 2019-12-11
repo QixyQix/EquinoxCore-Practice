@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Validations
 {
-    class RegisterNewCustomerCommandValidation : CustomerValidation<RegisterNewCustomerCommand>
+    public class RegisterNewCustomerCommandValidation : CustomerValidation<RegisterNewCustomerCommand>
     {
         public RegisterNewCustomerCommandValidation() {
             ValidateName();

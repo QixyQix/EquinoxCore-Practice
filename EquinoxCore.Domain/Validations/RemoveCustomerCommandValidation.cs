@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Validations
 {
-    class RemoveCustomerCommandValidation : CustomerValidation<RemoveCustomerCommand>
+    public class RemoveCustomerCommandValidation : CustomerValidation<RemoveCustomerCommand>
     {
         public RemoveCustomerCommandValidation() {
             ValidateId();

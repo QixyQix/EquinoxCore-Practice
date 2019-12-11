@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Commands
 {
-    class RemoveCustomerCommand : CustomerCommand
+    public class RemoveCustomerCommand : CustomerCommand
     {
         public RemoveCustomerCommand(Guid id)
         {

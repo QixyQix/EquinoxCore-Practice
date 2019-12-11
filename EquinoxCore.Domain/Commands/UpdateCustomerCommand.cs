@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Domain.Commands
 {
-    class UpdateCustomerCommand : CustomerCommand
+    public class UpdateCustomerCommand : CustomerCommand
     {
         public UpdateCustomerCommand(Guid id, string name, string email, DateTime birthDate) {
             Id = id;
