@@ -26,5 +26,13 @@ namespace EquinoxCore.Domain.CommandHandlers
                 _bus.RaiseEvent(new DomainNotification(message.MessageType, error.ErrorMessage));
             }
         }
+
+        public bool Commit() {
+            if (_notifications.HasNotifications()) return false;
+            if (_uow.Commit()) return true;
+
+            _bus.RaiseEvent(new DomainNotification("Commit", "There was a problem in saving the data"));
+            return false;
+        }
     }
 }
