@@ -28,12 +28,12 @@ namespace EquinoxCore.Infra.Data.Context
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            //Get appsettings.json config
+            // get the configuration from the app settings
             var config = new ConfigurationBuilder()
                 .SetBasePath(_env.ContentRootPath)
                 .AddJsonFile("appsettings.json")
                 .Build();
-            //Set the database to use
+            // define the database to use
             optionsBuilder.UseNpgsql(config.GetConnectionString("DefaultConnection"));
         }
 
