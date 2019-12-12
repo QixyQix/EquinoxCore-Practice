@@ -27,7 +27,8 @@ namespace EquinoxCore.Infra.Data.Context
             base.OnModelCreating(builder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
             // get the configuration from the app settings
             var config = new ConfigurationBuilder()
                 .SetBasePath(_env.ContentRootPath)
