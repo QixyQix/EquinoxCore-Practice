@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EquinoxCore.Infra.Data.Mappings
 {
-    class CustomerMap : IEntityTypeConfiguration<Customer>
+    public class CustomerMap : IEntityTypeConfiguration<Customer>
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
