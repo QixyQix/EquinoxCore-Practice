@@ -9,7 +9,7 @@ using System.Text;
 
 namespace EquinoxCore.Infra.Data.Context
 {
-    class EventStoreSQLContext : DbContext
+    public class EventStoreSQLContext : DbContext
     {
         public DbSet<StoredEvent> StoredEvent { get; set; }
         private readonly IHostEnvironment _env;
