@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCuttin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxCore.Infra.CrossCutting.Bus", "EquinoxCore.Infra.CrossCutting.Bus\EquinoxCore.Infra.CrossCutting.Bus.csproj", "{EC11FB6F-F223-486D-A9DB-07C31049C0C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxCore.Infra.CrossCutting.Identity", "EquinoxCore.Infra.CrossCutting.Identity\EquinoxCore.Infra.CrossCutting.Identity.csproj", "{F7809124-B9DD-4BC3-8125-458D211DE7C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{EC11FB6F-F223-486D-A9DB-07C31049C0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC11FB6F-F223-486D-A9DB-07C31049C0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC11FB6F-F223-486D-A9DB-07C31049C0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7809124-B9DD-4BC3-8125-458D211DE7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7809124-B9DD-4BC3-8125-458D211DE7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7809124-B9DD-4BC3-8125-458D211DE7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7809124-B9DD-4BC3-8125-458D211DE7C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{97993FCA-48CC-4A1F-AD14-96F6613AD1A9} = {19ABE553-DD2C-464A-873E-B8A98A379070}
 		{F0B746A3-F726-4E83-8FF2-33A96D832D31} = {7ED71D0F-31FC-4E11-8C6D-0E1599C9C79C}
 		{EC11FB6F-F223-486D-A9DB-07C31049C0C1} = {F0B746A3-F726-4E83-8FF2-33A96D832D31}
+		{F7809124-B9DD-4BC3-8125-458D211DE7C5} = {F0B746A3-F726-4E83-8FF2-33A96D832D31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBF03F8F-35D0-4FD7-997D-766CB5F65598}
