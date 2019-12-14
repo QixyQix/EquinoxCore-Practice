@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EquinoxCore.Infra.CrossCutting.Identity.Models
 {
-    class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
     }
 }
