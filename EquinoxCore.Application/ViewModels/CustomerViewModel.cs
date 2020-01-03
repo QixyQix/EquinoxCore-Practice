@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EquinoxCore.Application.ViewModels
 {
-    class CustomerViewModel
+    public class CustomerViewModel
     {
         [Key]
         public Guid Id { get; set; }
