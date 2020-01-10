@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,6 @@ namespace EquinoxCore.Services.Api.Configurations
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             var builder = services.AddMvcCore();
-            builder.AddJsonFormatters();
             builder.AddApiExplorer();
             builder.AddCors();
 
