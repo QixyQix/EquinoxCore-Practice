@@ -1,4 +1,6 @@
-﻿using EquinoxCore.Domain.CommandHandlers;
+﻿using EquinoxCore.Application.Interfaces;
+using EquinoxCore.Application.Services;
+using EquinoxCore.Domain.CommandHandlers;
 using EquinoxCore.Domain.Commands;
 using EquinoxCore.Domain.Core.Bus;
 using EquinoxCore.Domain.Core.Events;
@@ -37,7 +39,7 @@ namespace EquinoxCore.Infra.CrossCutting.IoC
             services.AddSingleton<IAuthorizationHandler, ClaimRequirementHandler>();
 
             //Application
-            //TODO LATER
+            services.AddScoped<ICustomerAppService, CustomerAppService>();
 
             //Domain - Events
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
