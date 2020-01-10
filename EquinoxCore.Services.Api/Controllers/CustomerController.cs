@@ -77,7 +77,7 @@ namespace EquinoxCore.Services.Api.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [Route("customer-management/history/{id:guid})"]
+        [Route("customer-management/history/{id:guid}")]
         public IActionResult GetHistory(Guid id) {
             var customerHistoryData = _customerAppService.GetAllHistory(id);
             return Response(customerHistoryData);
