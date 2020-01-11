@@ -101,6 +101,22 @@ namespace EquinoxCore.Web.Controllers
             return View(customerViewModel);
         }
 
+        [HttpGet]
+        [Authorize(Policy = "CanRemoveCustomerData")]
+        [Route("customer-management/remove-customer/{id:guid}")]
+        public IActionResult Delete(Guid? id) {
+            if (id == null) {
+                return NotFound();
+            }
+
+            var customerViewModel = _customerAppService.GetById(id.Value);
+
+            if (customerViewModel == null) {
+                return NotFound();
+            }
+
+            return View(customerViewModel);
+        }
 
 
 
