@@ -89,6 +89,7 @@ namespace EquinoxCore.Web.Controllers
         [HttpPost]
         [Authorize(Policy = "CanWriteCustomerData")]
         [Route("customer-management/edit-customer/{id:guid}")]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit([FromBody] CustomerViewModel customerViewModel) {
             if (!ModelState.IsValid) return View(customerViewModel);
 
@@ -99,6 +100,8 @@ namespace EquinoxCore.Web.Controllers
 
             return View();
         }
+
+
 
     }
 }
