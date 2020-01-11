@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquinoxCore.Application", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E04E5189-1C49-4D8A-B279-682C7987B37C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxCore.Services.Api", "EquinoxCore.Services.Api\EquinoxCore.Services.Api.csproj", "{DFABBBAC-C066-4399-BD2E-DD9620423B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquinoxCore.Services.Api", "EquinoxCore.Services.Api\EquinoxCore.Services.Api.csproj", "{DFABBBAC-C066-4399-BD2E-DD9620423B13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
