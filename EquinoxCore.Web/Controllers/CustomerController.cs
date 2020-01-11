@@ -133,7 +133,13 @@ namespace EquinoxCore.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        [Route("customer-management/customer-history/{id:guid}")]
+        public JsonResult History(Guid id) {
+            var customerHistoryData = _customerAppService.GetAllHistory(id);
 
+            return Json(customerHistoryData);
+        }
 
 
     }
