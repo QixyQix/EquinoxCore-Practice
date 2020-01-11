@@ -20,5 +20,31 @@ namespace EquinoxCore.Web.Controllers
         public CustomerController(ICustomerAppService customerAppService, INotificationHandler<DomainNotification> notifications) : base(notifications) {
             _customerAppService = customerAppService;
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("customer-management/list-all")]
+        public IActionResult Index()
+        {
+            return View(_customerAppService.GetAll());
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("customer-management/customer-details/{id:guid}")]
+        public IActionResult Details(Guid? id) {
+            if (id == null) {
+                return NotFound();
+            }
+
+            var customerViewModel = _customerAppService.GetById(id.Value);
+
+            if (customerViewModel == null) {
+                return NotFound();
+            }
+
+            return View(customerViewModel);
+        }
+
     }
 }
