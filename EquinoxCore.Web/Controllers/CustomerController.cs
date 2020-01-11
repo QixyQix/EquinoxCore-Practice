@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EquinoxCore.Application.Interfaces;
+using EquinoxCore.Application.ViewModels;
 using EquinoxCore.Domain.Core.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -42,6 +43,28 @@ namespace EquinoxCore.Web.Controllers
             if (customerViewModel == null) {
                 return NotFound();
             }
+
+            return View(customerViewModel);
+        }
+
+        [HttpGet]
+        [Authorize(Policy = "CanWriteCustomerData")]
+        [Route("customer-management/register-new")]
+        public IActionResult Create() {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Policy = "CanWriteCustomerData")]
+        [Route("customer-management/register-new")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([FromBody] CustomerViewModel customerViewModel) {
+            if (!ModelState.IsValid) return View(customerViewModel);
+
+            _customerAppService.Register(customerViewModel);
+
+            if (IsValidOperation())
+                ViewBag.Success = "Customer Registered!";
 
             return View(customerViewModel);
         }
