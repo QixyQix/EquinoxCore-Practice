@@ -19,7 +19,29 @@ namespace EquinoxCore.Web.Controllers
             return View();
         }
 
-        
+        [Route("about")]
+        public IActionResult About() {
+            ViewData["Message"] = "Your application about page";
+
+            return View();
+        }
+
+        [Route("contact")]
+        public IActionResult Contact() {
+            ViewData["Message"] = "Your contact page";
+
+            return View();
+        }
+
+        [Route("error")]
+        public IActionResult Error() {
+            return View();
+        }
+
+        [Route("access-denied")]
+        public IActionResult AccessDenied() {
+            return View();
+        }
 
     }
 }
