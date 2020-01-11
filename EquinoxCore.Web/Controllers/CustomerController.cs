@@ -98,8 +98,10 @@ namespace EquinoxCore.Web.Controllers
             if (IsValidOperation())
                 ViewBag.Success = "Customer updated";
 
-            return View();
+            return View(customerViewModel);
         }
+
+
 
 
 
