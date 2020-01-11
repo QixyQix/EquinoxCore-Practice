@@ -118,6 +118,21 @@ namespace EquinoxCore.Web.Controllers
             return View(customerViewModel);
         }
 
+        [HttpPost, ActionName("Delete")]
+        [Authorize(Policy = "CanRemoveCustomerData")]
+        [Route("customer-management/remove-customer/{id:guid}")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(Guid id) {
+
+            _customerAppService.Remove(id);
+
+            if (!IsValidOperation()) return View(_customerAppService.GetById(id));
+
+            ViewBag.Success = "Customer Removed!";
+
+            return RedirectToAction("Index");
+        }
+
 
 
 
