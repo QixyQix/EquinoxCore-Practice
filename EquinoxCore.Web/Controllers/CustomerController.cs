@@ -69,5 +69,36 @@ namespace EquinoxCore.Web.Controllers
             return View(customerViewModel);
         }
 
+        [HttpGet]
+        [Authorize(Policy = "CanWriteCustomerData")]
+        [Route("customer-management/edit-customer/{id:guid}")]
+        public IActionResult Edit(Guid? id) {
+            if (id == null) {
+                return NotFound();
+            }
+
+            var customerViewModel = _customerAppService.GetById(id.Value);
+
+            if (customerViewModel == null) {
+                return NotFound();
+            }
+
+            return View(customerViewModel);
+        }
+
+        [HttpPost]
+        [Authorize(Policy = "CanWriteCustomerData")]
+        [Route("customer-management/edit-customer/{id:guid}")]
+        public IActionResult Edit([FromBody] CustomerViewModel customerViewModel) {
+            if (!ModelState.IsValid) return View(customerViewModel);
+
+            _customerAppService.Update(customerViewModel);
+
+            if (IsValidOperation())
+                ViewBag.Success = "Customer updated";
+
+            return View();
+        }
+
     }
 }
