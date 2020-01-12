@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EquinoxCore.Infra.CrossCutting.Identity.Authorization;
 using EquinoxCore.Infra.CrossCutting.Identity.Data;
 using EquinoxCore.Infra.CrossCutting.Identity.Models;
 using EquinoxCore.Infra.Data.Context;
@@ -54,7 +55,10 @@ namespace EquinoxCore.Web
             services.AddAutoMapperSetup();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-
+            services.AddAuthorization(options => {
+                options.AddPolicy("CanWriteCustomerData", policy => policy.Requirements.Add(new ClaimRequirement("Customers", "Write")));
+                options.AddPolicy("CanRemoveCustomerData", policy => policy.Requirements.Add(new ClaimRequirement("Customers", "Remove")));
+            });
 
             services.AddControllersWithViews();
 
