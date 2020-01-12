@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using EquinoxCore.Infra.CrossCutting.Identity.Authorization;
 using EquinoxCore.Infra.CrossCutting.Identity.Data;
 using EquinoxCore.Infra.CrossCutting.Identity.Models;
+using EquinoxCore.Infra.CrossCutting.IoC;
 using EquinoxCore.Infra.Data.Context;
 using EquinoxCore.Services.Api.Configurations;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -60,10 +62,18 @@ namespace EquinoxCore.Web
                 options.AddPolicy("CanRemoveCustomerData", policy => policy.Requirements.Add(new ClaimRequirement("Customers", "Remove")));
             });
 
-            services.AddControllersWithViews();
+            services.AddMediatR(typeof(Startup));
 
-            services.AddDbContext<EquinoxContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DefaultConnection"]));
-            services.AddDbContext<EventStoreSQLContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DefaultConnection"]));
+            RegisterServices(services);
+
+            //services.AddControllersWithViews();
+
+            //services.AddDbContext<EquinoxContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DefaultConnection"]));
+            //services.AddDbContext<EventStoreSQLContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DefaultConnection"]));
+        }
+
+        private static void RegisterServices(IServiceCollection services) {
+            NativeInjectorBootstrapper.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
