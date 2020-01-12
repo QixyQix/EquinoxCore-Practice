@@ -18,7 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EquinoxCore.Application\EquinoxCore.Application.csproj" />
+    <ProjectReference Include="..\EquinoxCore.Infra.CrossCutting.Identity\EquinoxCore.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\EquinoxCore.Infra.CrossCutting.IoC\EquinoxCore.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\EquinoxCore.Infra.Data\EquinoxCore.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 
 </Project>
