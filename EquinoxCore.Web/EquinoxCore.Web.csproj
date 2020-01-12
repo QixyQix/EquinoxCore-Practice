@@ -21,6 +21,7 @@
     <ProjectReference Include="..\EquinoxCore.Infra.CrossCutting.Identity\EquinoxCore.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\EquinoxCore.Infra.CrossCutting.IoC\EquinoxCore.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\EquinoxCore.Infra.Data\EquinoxCore.Infra.Data.csproj" />
+    <ProjectReference Include="..\EquinoxCore.Services.Api\EquinoxCore.Services.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
